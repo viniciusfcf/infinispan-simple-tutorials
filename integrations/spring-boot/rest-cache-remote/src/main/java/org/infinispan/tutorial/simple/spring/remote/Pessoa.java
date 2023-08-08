@@ -5,13 +5,13 @@ import org.infinispan.protostream.annotations.ProtoField;
 
 import java.util.Objects;
 
-public class BasqueName {
+public class Pessoa {
 
    private final String id;
    private final String name;
 
    @ProtoFactory
-   public BasqueName(String id, String name) {
+   public Pessoa(String id, String name) {
       this.id = id;
       this.name = name;
    }
@@ -31,7 +31,7 @@ public class BasqueName {
    public boolean equals(Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
-      BasqueName that = (BasqueName) o;
+      Pessoa that = (Pessoa) o;
       return Objects.equals(id, that.id) &&
             Objects.equals(name, that.name);
    }
@@ -43,7 +43,7 @@ public class BasqueName {
 
    @Override
    public String toString() {
-      return "BasqueName{" +
+      return "Pessoa{" +
             "id=" + id +
             ", name='" + name + '\'' +
             '}';

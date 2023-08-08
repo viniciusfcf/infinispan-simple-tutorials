@@ -19,18 +19,19 @@ public class InfinispanConfiguration {
       return b -> {
          URI cacheConfigUri;
          try {
-            cacheConfigUri = this.getClass().getClassLoader().getResource("basquesNamesCache.xml").toURI();
+            cacheConfigUri = this.getClass().getClassLoader().getResource("pessoasCache.xml").toURI();
          } catch (URISyntaxException e) {
             throw new RuntimeException(e);
          }
 
-         b.remoteCache(Data.BASQUE_NAMES_CACHE)
+         b.remoteCache(Data.PESSOAS_CACHE)
                  .configurationURI(cacheConfigUri);
 
-         b.remoteCache(Data.BASQUE_NAMES_CACHE).marshaller(ProtoStreamMarshaller.class);
+         b.remoteCache(Data.PESSOAS_CACHE).marshaller(ProtoStreamMarshaller.class);
 
          // Add marshaller in the client, the class is generated from the interface in compile time
-         b.addContextInitializer(new BasquesNamesSchemaBuilderImpl());
+         b.addContextInitializer(new PessoasSchemaBuilderImpl());
+         
       };
    }
 }

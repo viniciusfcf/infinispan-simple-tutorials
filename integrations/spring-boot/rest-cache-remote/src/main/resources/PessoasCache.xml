@@ -1,3 +1,3 @@
-<distributed-cache name="basque-names">
+<distributed-cache name="pessoas">
     <encoding media-type="application/x-protostream"/>
 </distributed-cache>
