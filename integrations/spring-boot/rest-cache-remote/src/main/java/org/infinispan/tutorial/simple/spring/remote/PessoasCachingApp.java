@@ -2,12 +2,9 @@ package org.infinispan.tutorial.simple.spring.remote;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@EnableCaching
-@EnableScheduling
+//@EnableCaching // se quiser utilizar @Cacheable
 public class PessoasCachingApp {
 
    public static void main(String... args) {

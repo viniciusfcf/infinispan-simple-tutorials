@@ -25,9 +25,8 @@ public class InfinispanConfiguration {
          }
 
          b.remoteCache(Data.PESSOAS_CACHE)
-                 .configurationURI(cacheConfigUri);
-
-         b.remoteCache(Data.PESSOAS_CACHE).marshaller(ProtoStreamMarshaller.class);
+            .configurationURI(cacheConfigUri)
+            .marshaller(ProtoStreamMarshaller.class);
 
          // Add marshaller in the client, the class is generated from the interface in compile time
          b.addContextInitializer(new PessoasSchemaBuilderImpl());
